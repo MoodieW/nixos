@@ -14,11 +14,11 @@
       };
     in {
       nixosConfigurations = {
-        moodie = nixpkgs.lib.nixosSystem {
+        main-pc = nixpkgs.lib.nixosSystem {
           inherit system;
 
           modules = [
-            ./nixos/configuration.nix
+            ./nixos/hosts/main-pc/configuration.nix
           ];
         };
       };

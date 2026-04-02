@@ -6,8 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    [
       ./modules/terminal.nix
       ./modules/gaming.nix
       ./modules/apps.nix
@@ -17,7 +16,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -145,11 +143,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-  hardware.opengl = {
-    enable = true;
-  };
-  hardware.nvidia.open = true;
-  hardware.nvidia.modesetting.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
 }
