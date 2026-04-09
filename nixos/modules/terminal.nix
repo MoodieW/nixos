@@ -29,6 +29,9 @@
   '';
   };  
   environment.systemPackages = with pkgs; [
+    nodejs
+    jq
+    atuin
     git
     wl-clipboard
     eza
@@ -45,7 +48,6 @@
     spotify-player
     opencode
     fastfetch
-    claude-code
     glow
     docker
     btop
@@ -68,5 +70,6 @@
   environment.variables = {
     EDITOR = "hx";
     VISUAL = "hx";
+    NPM_CONFIG_PREFIX = "$HOME/.npm-global";
   };
 }
